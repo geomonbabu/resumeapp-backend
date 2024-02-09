@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const studrouter = require("./controllers/StudRouter")
+const resumerouter = require("./controllers/ResumeRouter")
 
 //alias name
 const student=express()
@@ -15,6 +16,7 @@ mongoose.connect("mongodb+srv://megeomonbabu:geo12345@cluster0.i1dx7ax.mongodb.n
 
 //routing or api
 student.use("/api/stud",studrouter)
+student.use("/api/resume",resumerouter)
 
 student.listen(3001,()=>{
     console.log("server is running")
